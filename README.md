@@ -1,1 +1,1 @@
-# goFinancess
+# goFinancess 2.0
