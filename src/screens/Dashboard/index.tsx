@@ -140,7 +140,6 @@ export function Dashboard() {
         loadTransactions();
 
         const dataKey = '@gofinancess:transactions';
-        const response = AsyncStorage.removeItem(dataKey);
     },[]);
 
     useFocusEffect(useCallback(() => {
