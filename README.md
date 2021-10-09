@@ -1,1 +1,1 @@
-# goFinancess 2.0
+# goFinancess 1.0.0
