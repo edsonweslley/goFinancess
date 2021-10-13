@@ -146,7 +146,7 @@ export function Dashboard() {
                     style: 'currency',
                     currency: 'BRL'
                 }),
-                lastTransaction: totaInterval
+                lastTransaction: totalInterval
             }
         });
 
