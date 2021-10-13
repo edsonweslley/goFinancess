@@ -26,6 +26,7 @@ import {
 import { categories } from '../../utils/categories';
 import { RFValue } from 'react-native-responsive-fontsize';
 import {  useBottomTabBarHeight  } from '@react-navigation/bottom-tabs'
+import { useAuth } from '../../hooks/auth';
 
 interface TransactionData {
     type: 'pos' | 'neg';
@@ -46,7 +47,8 @@ interface CategoryData{
 
 export function Resume(){
 
-    const theme = useTheme();
+    const { user } = useAuth();
+const theme = useTheme();
 const [isLoading, setIsLoading] = useState(false);
 
     const [selectedDate, setSelectedDate] = useState(new Date());
@@ -68,7 +70,7 @@ const [isLoading, setIsLoading] = useState(false);
 
     async function loadData() {
         setIsLoading(true);
-        const dataKey = '@gofinancess:transactions';
+        const dataKey = `@gofinancess:transactions_user:${user.id}`;
         const response = await AsyncStorage.getItem(dataKey);
         const responseFormatted = response ? JSON.parse(response) : [];
 
